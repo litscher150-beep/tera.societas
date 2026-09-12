@@ -6,247 +6,26 @@
   <meta name="description" content="Téra Societas Sécurité Privée à Nice et sur la Côte d’Azur : résidentiel, industrie, commerces de luxe, prévention de la démarque inconnue." />
   <title>Téra Societas Sécurité Privée</title>
   <style>
-    :root{
-      --bg:#0b1016;
-      --bg2:#111823;
-      --card:#161f2b;
-      --text:#f6f8fb;
-      --muted:#b5becb;
-      --red:#e51c2a;
-      --yellow:#ffcf22;
-      --line:rgba(255,255,255,.09);
-      --max:1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(var(--max),calc(100% - 34px));margin:auto}
-    .topbar{background:#070b10;color:#dce3eb;font-size:14px;border-bottom:1px solid var(--line)}
-    .topbar .container{display:flex;justify-content:space-between;gap:18px;padding:8px 0;flex-wrap:wrap}
-    header{position:sticky;top:0;z-index:20;background:rgba(11,16,22,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 0}
-    .brand{display:flex;align-items:center;gap:18px;font-weight:900;letter-spacing:.025em}
-    .brand small{display:block;color:#c9d1dc;font-size:10px;letter-spacing:.18em;font-weight:700}
-    .mark{display:flex;align-items:center;gap:12px}
-    .dot-big{width:51px;height:51px;border-radius:50%;display:inline-block}
-    .red{background:var(--red);box-shadow:0 0 17px rgba(229,28,42,.35)}
-    .yellow{background:var(--yellow);box-shadow:0 0 17px rgba(255,207,34,.28)}
-    .navlinks{display:flex;align-items:center;gap:22px;font-size:14px;color:#d3dae4}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.2s}
-    .btn-primary{background:var(--red);color:white}
-    .btn-outline{border-color:#3a4553;color:#fff}
-    .btn:hover{transform:translateY(-1px)}
-    .hero{padding:86px 0 72px;background:
-      radial-gradient(circle at 80% 15%,rgba(229,28,42,.14),transparent 26%),
-      radial-gradient(circle at 18% 40%,rgba(255,207,34,.08),transparent 23%),
-      linear-gradient(180deg,#0b1016,#101823)}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
-    .eyebrow{color:var(--yellow);font-weight:900;letter-spacing:.16em;font-size:12px}
-    h1{font-size:clamp(44px,7vw,78px);line-height:.98;margin:16px 0 20px;max-width:900px}
-    .lead{font-size:20px;color:#c7d0db;max-width:720px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .hero-card{background:linear-gradient(160deg,#1a2431,#10161e);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 25px 70px rgba(0,0,0,.28)}
-    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
-    .stat{padding:18px;border-radius:18px;background:#111923;border:1px solid var(--line)}
-    .stat b{font-size:28px;display:block;color:var(--yellow)}
-    section{padding:76px 0}
-    .section-head{max-width:760px;margin-bottom:34px}
-    .section-head h2{font-size:clamp(32px,4vw,50px);margin:9px 0 12px}
-    .section-head p{color:var(--muted);font-size:18px}
-    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
-    .num{font-size:13px;font-weight:900;color:var(--yellow);letter-spacing:.15em}
-    .card h3{font-size:22px;margin:12px 0 8px}
-    .card p{color:var(--muted)}
-    .band{background:#0f151d;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .loss-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
-    .calc{background:#141d27;border:1px solid var(--line);border-radius:22px;padding:26px}
-    .calc strong{display:block;font-size:42px;color:var(--yellow);margin:8px 0}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .step{padding:24px;border-left:4px solid var(--red);background:#121a24;border-radius:0 20px 20px 0}
-    .private{background:linear-gradient(135deg,#131c27,#1b2430);border:1px solid var(--line);border-radius:28px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
-    .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .faq div{background:#121a24;border:1px solid var(--line);border-radius:18px;padding:20px}
-    footer{border-top:1px solid var(--line);padding:42px 0;color:#b9c2ce}
-    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
-    .legal{font-size:12px;color:#8893a1;margin-top:28px}
-    @media(max-width:900px){
-      .hero-grid,.loss-grid,.private,.footer-grid{grid-template-columns:1fr}
-      .grid4{grid-template-columns:repeat(2,1fr)}
-      .steps{grid-template-columns:1fr}
-      .navlinks{display:none}
-    }
-    @media(max-width:560px){
-      .grid4,.faq{grid-template-columns:1fr}
-      h1{font-size:45px}
-      .dot-big{width:36px;height:36px}
-      .mark{gap:8px}
-      .brand{gap:12px;font-size:14px}
-      .brand small{font-size:8px}
-    }
+    :root{--bg:#0b1016;--bg2:#111823;--card:#161f2b;--text:#f6f8fb;--muted:#b5becb;--red:#e51c2a;--yellow:#ffcf22;--line:rgba(255,255,255,.09);--max:1180px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55} a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 34px));margin:auto}.topbar{background:#070b10;color:#dce3eb;font-size:14px;border-bottom:1px solid var(--line)}.topbar .container{display:flex;justify-content:space-between;gap:18px;padding:8px 0;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,16,22,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 0}.brand{display:flex;align-items:center;gap:18px;font-weight:900;letter-spacing:.025em}.brand small{display:block;color:#c9d1dc;font-size:10px;letter-spacing:.18em;font-weight:700}.mark{display:flex;align-items:center;gap:12px}.dot-big{width:51px;height:51px;border-radius:50%;display:inline-block}.red{background:var(--red);box-shadow:0 0 17px rgba(229,28,42,.35)}.yellow{background:var(--yellow);box-shadow:0 0 17px rgba(255,207,34,.28)}.navlinks{display:flex;align-items:center;gap:22px;font-size:14px;color:#d3dae4}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.2s}.btn-primary{background:var(--red);color:white}.btn-outline{border-color:#3a4553;color:#fff}.btn:hover{transform:translateY(-1px)}
+    .hero{padding:86px 0 72px;background:radial-gradient(circle at 80% 15%,rgba(229,28,42,.14),transparent 26%),radial-gradient(circle at 18% 40%,rgba(255,207,34,.08),transparent 23%),linear-gradient(180deg,#0b1016,#101823)}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.eyebrow{color:var(--yellow);font-weight:900;letter-spacing:.16em;font-size:12px}h1{font-size:clamp(44px,7vw,78px);line-height:.98;margin:16px 0 20px;max-width:900px}.lead{font-size:20px;color:#c7d0db;max-width:720px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.hero-card{background:linear-gradient(160deg,#1a2431,#10161e);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 25px 70px rgba(0,0,0,.28)}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}.stat{padding:18px;border-radius:18px;background:#111923;border:1px solid var(--line)}.stat b{font-size:28px;display:block;color:var(--yellow)}
+    section{padding:76px 0}.section-head{max-width:760px;margin-bottom:34px}.section-head h2{font-size:clamp(32px,4vw,50px);margin:9px 0 12px}.section-head p{color:var(--muted);font-size:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}.num{font-size:13px;font-weight:900;color:var(--yellow);letter-spacing:.15em}.card h3{font-size:22px;margin:12px 0 8px}.card p{color:var(--muted)}.band{background:#0f151d;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.loss-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.calc{background:#141d27;border:1px solid var(--line);border-radius:22px;padding:26px}.calc strong{display:block;font-size:42px;color:var(--yellow);margin:8px 0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:24px;border-left:4px solid var(--red);background:#121a24;border-radius:0 20px 20px 0}.private{background:linear-gradient(135deg,#131c27,#1b2430);border:1px solid var(--line);border-radius:28px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.faq div{background:#121a24;border:1px solid var(--line);border-radius:18px;padding:20px}footer{border-top:1px solid var(--line);padding:42px 0;color:#b9c2ce}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}.legal{font-size:12px;color:#8893a1;margin-top:28px}
+    @media(max-width:900px){.hero-grid,.loss-grid,.private,.footer-grid{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.navlinks{display:none}}@media(max-width:560px){.grid4,.faq{grid-template-columns:1fr}h1{font-size:45px}.dot-big{width:36px;height:36px}.mark{gap:8px}.brand{gap:12px;font-size:14px}.brand small{font-size:8px}}
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container">
-      <span>Sécurité privée à Nice & sur la Côte d’Azur</span>
-      <a href="tel:+33970925430">09 70 92 54 30</a>
-    </div>
-  </div>
-
-  <header>
-    <div class="container">
-      <nav>
-        <a class="brand" href="#accueil" aria-label="Téra Societas">
-          <span class="mark" aria-hidden="true">
-            <span class="dot-big red"></span>
-            <span class="dot-big red"></span>
-            <span class="dot-big yellow"></span>
-            <span class="dot-big yellow"></span>
-            <span class="dot-big yellow"></span>
-          </span>
-          <span>TÉRA SOCIETAS<small>SÉCURITÉ PRIVÉE</small></span>
-        </a>
-        <div class="navlinks">
-          <a href="#expertises">Nos expertises</a>
-          <a href="#methode">Notre approche</a>
-          <a href="#contact">Parlons de votre site</a>
-          <a class="btn btn-outline" href="#prive">Espace privé</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main id="accueil">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">SÉCURITÉ PRIVÉE · NICE & CÔTE D’AZUR</div>
-          <h1>La sérénité se protège.</h1>
-          <p class="lead">Vos lieux de vie. Votre activité. Votre réputation. Une sécurité attentive, professionnelle et adaptée à votre environnement.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Construisons votre dispositif</a>
-            <a class="btn btn-outline" href="#expertises">Découvrir nos expertises</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="eyebrow">VIGILANCE · INNOVATION · INTÉGRITÉ · SERVIR</div>
-          <h2>Une présence humaine. Une protection pensée pour votre site.</h2>
-          <div class="stats">
-            <div class="stat"><b>01</b>Analyse des risques offerte</div>
-            <div class="stat"><b>02</b>Consignes propres à votre site</div>
-            <div class="stat"><b>03</b>Rapports horodatés</div>
-            <div class="stat"><b>04</b>Interlocuteur dédié</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="expertises">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">NOS EXPERTISES</div>
-          <h2>Votre environnement. Notre attention.</h2>
-          <p>Une résidence n’a pas les mêmes besoins qu’une boutique ou un site industriel. Votre dispositif de sécurité doit en tenir compte.</p>
-        </div>
-        <div class="grid4">
-          <article class="card"><div class="num">01 · RÉSIDENCES · COPROPRIÉTÉS · VILLAS</div><h3>Résidentiel</h3><p>Préserver la tranquillité des lieux de vie, contrôler les accès et garantir une présence rassurante.</p></article>
-          <article class="card"><div class="num">02 · SITES INDUSTRIELS · ENTREPÔTS</div><h3>Industrie</h3><p>Protéger les accès, les zones sensibles et la continuité d’activité avec des consignes adaptées.</p></article>
-          <article class="card"><div class="num">03 · BOUTIQUES · BIJOUTERIES · SHOWROOMS</div><h3>Commerces de luxe</h3><p>Une présence discrète et irréprochable, cohérente avec votre image et l’expérience de vos clients.</p></article>
-          <article class="card"><div class="num">04 · MAGASINS · RETAIL · GMS</div><h3>Démarque inconnue</h3><p>Observation des zones sensibles, dissuasion, prévention et coordination avec vos équipes.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band">
-      <div class="container loss-grid">
-        <div>
-          <div class="eyebrow">DÉMARQUE INCONNUE</div>
-          <h2>Vos marges aussi méritent d’être protégées.</h2>
-          <p class="lead">Nous construisons une prévention adaptée à la réalité du magasin : zones sensibles, flux clients, caisse, réserves et organisation interne.</p>
-        </div>
-        <div class="calc">
-          <span>Exemple : CA annuel HT</span>
-          <strong>5 000 000 €</strong>
-          <p>Baisse envisagée de la démarque : <b>0,2 point</b></p>
-          <p>Enjeu financier indicatif : <b>10 000 € / an</b></p>
-          <small>Simulation arithmétique illustrative, hors coût du dispositif. Elle ne constitue pas une garantie de résultat.</small>
-        </div>
-      </div>
-    </section>
-
-    <section id="methode">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">LA MÉTHODE TÉRA</div>
-          <h2>La confiance se construit sur le terrain.</h2>
-          <p>Un dispositif clair dès le départ, des consignes partagées et un suivi qui permet d’ajuster la prestation.</p>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="num">01</div><h3>Comprendre votre site</h3><p>Analyse des accès, flux, horaires, risques et priorités.</p></div>
-          <div class="step"><div class="num">02</div><h3>Organiser la protection</h3><p>Missions des agents, périmètre d’intervention et consignes définies avant le démarrage.</p></div>
-          <div class="step"><div class="num">03</div><h3>Suivre et ajuster</h3><p>Rapports horodatés, remontées d’incidents et échanges réguliers.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="prive">
-      <div class="container private">
-        <div>
-          <div class="eyebrow">VOTRE ESPACE PRIVÉ</div>
-          <h2>Un lien direct avec Téra Societas.</h2>
-          <p class="lead">Messagerie privée, demandes, documents et échanges réservés aux participants autorisés.</p>
-        </div>
-        <div><a class="btn btn-primary" href="mailto:securiteprivee@terasocietas.fr">Accéder à la relation client</a></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">COMMENÇONS PAR VOTRE BESOIN</div>
-          <h2>Quel lieu souhaitez-vous mieux protéger ?</h2>
-          <p>Nous étudions votre besoin et vous proposons un dispositif adapté à votre site.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+33970925430">09 70 92 54 30</a>
-            <a class="btn btn-outline" href="mailto:securiteprivee@terasocietas.fr">Demander une étude</a>
-          </div>
-        </div>
-
-        <div class="faq">
-          <div><b>Diagnostic gratuit ?</b><br><span>Oui, une première analyse peut être réalisée sans engagement.</span></div>
-          <div><b>Besoins ponctuels ?</b><br><span>Oui, selon vos besoins et disponibilités opérationnelles.</span></div>
-          <div><b>Zone d’intervention ?</b><br><span>Nice, Côte d’Azur et autres secteurs selon la mission.</span></div>
-          <div><b>Suivi de prestation ?</b><br><span>Rapports, incidents et échanges peuvent être centralisés dans votre espace privé.</span></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <a class="brand" href="#accueil">
-          <span class="mark" aria-hidden="true">
-            <span class="dot-big red"></span>
-            <span class="dot-big red"></span>
-            <span class="dot-big yellow"></span>
-            <span class="dot-big yellow"></span>
-            <span class="dot-big yellow"></span>
-          </span>
-          <span>TÉRA SOCIETAS<small>SÉCURITÉ PRIVÉE</small></span>
-        </a>
-        <p>La vigilance au service de votre tranquillité.</p>
-      </div>
-      <div><b>Nos expertises</b><p>Résidentiel & villas<br>Industrie & logistique<br>Commerces de luxe<br>Démarque inconnue</p></div>
-      <div><b>Restons en contact</b><p>09 70 92 54 30<br>securiteprivee@terasocietas.fr<br>16 avenue du Bois de Cythère, 06000 Nice</p></div>
-    </div>
-    <div class="container legal">
-      © 2026 Téra Societas Sécurité Privée · SASU au capital de 8 000 € · RCS Nice · SIRET 940 697 972 00013 · APE 8010Z · AUT-006-2124-02-24-20250973869<br>
-      L’autorisation d’exercice ne confère aucune prérogative de puissance publique à l’entreprise ou aux personnes qui en bénéficient.
-    </div>
-  </footer>
+<div class="topbar"><div class="container"><span>Sécurité privée à Nice & sur la Côte d’Azur</span><a href="tel:+33970925430">09 70 92 54 30</a></div></div>
+<header><div class="container"><nav><a class="brand" href="#accueil" aria-label="Téra Societas"><span class="mark" aria-hidden="true"><span class="dot-big red"></span><span class="dot-big red"></span><span class="dot-big yellow"></span><span class="dot-big yellow"></span><span class="dot-big yellow"></span></span><span>TÉRA SOCIETAS<small>SÉCURITÉ PRIVÉE</small></span></a><div class="navlinks"><a href="#expertises">Nos expertises</a><a href="#methode">Notre approche</a><a href="#contact">Parlons de votre site</a><a class="btn btn-outline" href="#prive">Espace privé</a></div></nav></div></header>
+<main id="accueil">
+<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">SÉCURITÉ PRIVÉE · NICE & CÔTE D’AZUR</div><h1>La sérénité se protège.</h1><p class="lead">Vos lieux de vie. Votre activité. Votre réputation. Une sécurité attentive, professionnelle et adaptée à votre environnement.</p><div class="hero-actions"><a class="btn btn-primary" href="#contact">Construisons votre dispositif</a><a class="btn btn-primary" href="mailto:securiteprivee@terasocietas.fr?subject=Demande%20de%20devis">Demande de devis</a><a class="btn btn-outline" href="#expertises">Découvrir nos expertises</a></div></div><div class="hero-card"><div class="eyebrow">VIGILANCE · INNOVATION · INTÉGRITÉ · SERVIR</div><h2>Une présence humaine. Une protection pensée pour votre site.</h2><div class="stats"><div class="stat"><b>01</b>Analyse des risques offerte</div><div class="stat"><b>02</b>Consignes propres à votre site</div><div class="stat"><b>03</b>Rapports horodatés</div><div class="stat"><b>04</b>Interlocuteur dédié</div></div></div></div></section>
+<section id="expertises"><div class="container"><div class="section-head"><div class="eyebrow">NOS EXPERTISES</div><h2>Votre environnement. Notre attention.</h2><p>Une résidence n’a pas les mêmes besoins qu’une boutique ou un site industriel. Votre dispositif de sécurité doit en tenir compte.</p></div><div class="grid4"><article class="card"><div class="num">01 · RÉSIDENCES · COPROPRIÉTÉS · VILLAS</div><h3>Résidentiel</h3><p>Préserver la tranquillité des lieux de vie, contrôler les accès et garantir une présence rassurante.</p></article><article class="card"><div class="num">02 · SITES INDUSTRIELS · ENTREPÔTS</div><h3>Industrie</h3><p>Protéger les accès, les zones sensibles et la continuité d’activité avec des consignes adaptées.</p></article><article class="card"><div class="num">03 · BOUTIQUES · BIJOUTERIES · SHOWROOMS</div><h3>Commerces de luxe</h3><p>Une présence discrète et irréprochable, cohérente avec votre image et l’expérience de vos clients.</p></article><article class="card"><div class="num">04 · MAGASINS · RETAIL · GMS</div><h3>Démarque inconnue</h3><p>Observation des zones sensibles, dissuasion, prévention et coordination avec vos équipes.</p></article></div></div></section>
+<section class="band"><div class="container loss-grid"><div><div class="eyebrow">DÉMARQUE INCONNUE</div><h2>Vos marges aussi méritent d’être protégées.</h2><p class="lead">Nous construisons une prévention adaptée à la réalité du magasin : zones sensibles, flux clients, caisse, réserves et organisation interne.</p></div><div class="calc"><span>Exemple : CA annuel HT</span><strong>5 000 000 €</strong><p>Baisse envisagée de la démarque : <b>0,2 point</b></p><p>Enjeu financier indicatif : <b>10 000 € / an</b></p><small>Simulation arithmétique illustrative, hors coût du dispositif. Elle ne constitue pas une garantie de résultat.</small></div></div></section>
+<section id="methode"><div class="container"><div class="section-head"><div class="eyebrow">LA MÉTHODE TÉRA</div><h2>La confiance se construit sur le terrain.</h2><p>Un dispositif clair dès le départ, des consignes partagées et un suivi qui permet d’ajuster la prestation.</p></div><div class="steps"><div class="step"><div class="num">01</div><h3>Comprendre votre site</h3><p>Analyse des accès, flux, horaires, risques et priorités.</p></div><div class="step"><div class="num">02</div><h3>Organiser la protection</h3><p>Missions des agents, périmètre d’intervention et consignes définies avant le démarrage.</p></div><div class="step"><div class="num">03</div><h3>Suivre et ajuster</h3><p>Rapports horodatés, remontées d’incidents et échanges réguliers.</p></div></div></div></section>
+<section id="prive"><div class="container private"><div><div class="eyebrow">VOTRE ESPACE PRIVÉ</div><h2>Un lien direct avec Téra Societas.</h2><p class="lead">Messagerie privée, demandes, documents et échanges réservés aux participants autorisés.</p></div><div><a class="btn btn-primary" href="mailto:securiteprivee@terasocietas.fr">Accéder à la relation client</a></div></div></section>
+<section id="contact"><div class="container"><div class="section-head"><div class="eyebrow">COMMENÇONS PAR VOTRE BESOIN</div><h2>Quel lieu souhaitez-vous mieux protéger ?</h2><p>Nous étudions votre besoin et vous proposons un dispositif adapté à votre site.</p><div class="hero-actions"><a class="btn btn-primary" href="tel:+33970925430">09 70 92 54 30</a><a class="btn btn-outline" href="mailto:securiteprivee@terasocietas.fr">Demander une étude</a></div></div><div class="faq"><div><b>Diagnostic gratuit ?</b><br><span>Oui, une première analyse peut être réalisée sans engagement.</span></div><div><b>Besoins ponctuels ?</b><br><span>Oui, selon vos besoins et disponibilités opérationnelles.</span></div><div><b>Zone d’intervention ?</b><br><span>Nice, Côte d’Azur et autres secteurs selon la mission.</span></div><div><b>Suivi de prestation ?</b><br><span>Rapports, incidents et échanges peuvent être centralisés dans votre espace privé.</span></div></div></div></section>
+</main>
+<footer><div class="container footer-grid"><div><a class="brand" href="#accueil"><span class="mark" aria-hidden="true"><span class="dot-big red"></span><span class="dot-big red"></span><span class="dot-big yellow"></span><span class="dot-big yellow"></span><span class="dot-big yellow"></span></span><span>TÉRA SOCIETAS<small>SÉCURITÉ PRIVÉE</small></span></a><p>La vigilance au service de votre tranquillité.</p></div><div><b>Nos expertises</b><p>Résidentiel & villas<br>Industrie & logistique<br>Commerces de luxe<br>Démarque inconnue</p></div><div><b>Restons en contact</b><p>09 70 92 54 30<br>securiteprivee@terasocietas.fr<br>16 avenue du Bois de Cythère, 06000 Nice</p></div></div><div class="container legal">© 2026 Téra Societas Sécurité Privée · SASU au capital de 8 000 € · RCS Nice · SIRET 940 697 972 00013 · APE 8010Z · AUT-006-2124-02-24-20250973869<br>L’autorisation d’exercice ne confère aucune prérogative de puissance publique à l’entreprise ou aux personnes qui en bénéficient.</div></footer>
 </body>
 </html>
